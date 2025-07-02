@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Reference Sheet</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .reference-sheet {
+            width: 8.5in;
+            height: 5.5in;
+            border: 3px solid #2c3e50;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 11pt;
+            line-height: 1.3;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin: 0 auto;
+        }
+        .column {
+            width: 32%;
+            padding: 0 8px;
+        }
+        .column:nth-child(2) {
+            border-left: 2px solid #34495e;
+            border-right: 2px solid #34495e;
+            padding: 0 12px;
+        }
+        h4 {
+            text-align: center;
+            margin: 0 0 8px 0;
+            padding: 8px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            border-radius: 6px;
+            font-size: 12pt;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 8px 0 4px 0;
+            padding: 4px 8px;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .formula {
+            margin: 3px 0;
+            padding: 2px 4px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .formula:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+            margin: 4px 0;
+        }
+        td {
+            border: 1px solid #bdc3c7;
+            padding: 3px;
+            text-align: center;
+            background-color: rgba(255,255,255,0.8);
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #3498db, transparent);
+            margin: 8px 0;
+            border-radius: 1px;
+        }
+        .note {
+            font-size: 9pt;
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 2px 0;
+        }
+        @media (max-width: 1024px) {
+            .reference-sheet {
+                width: 95%;
+                height: auto;
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+                border: none !important;
+                padding: 10px 0;
+            }
+            .column:nth-child(2) {
+                border-top: 2px solid #34495e;
+                border-bottom: 2px solid #34495e;
+                border-left: none;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reference-sheet">
+        <div class="column">
+            <h4>Ch 2: Applications of Integration</h4>
+            
+            <div class="section-title">Area Between Curves:</div>
+            <div class="formula">\(A = \int_{a}^{b} [f(x) - g(x)] dx\)</div>
+            <div class="formula">\(A = \int_{c}^{d} [u(y) - v(y)] dy\)</div>
+            
+            <div class="section-title">Volumes of Solids:</div>
+            <div class="formula">Slicing: \(V = \int_{a}^{b} A(x) dx\)</div>
+            <div class="formula">Disk (x-axis rev): \(V = \int_{a}^{b} \pi[f(x)]^2 dx\)</div>
+            <div class="formula">Washer (x-axis rev): \(V = \int_{a}^{b} \pi([f(x)]^2 - [g(x)]^2) dx\)</div>
+            <div class="formula">Shell (y-axis rev): \(V = \int_{a}^{b} 2\pi x f(x) dx\)</div>
+            
+            <div class="section-title">Arc Length & Surface Area:</div>
+            <div class="formula">Arc Length: \(L = \int_{a}^{b} \sqrt{1 + [f'(x)]^2} dx\)</div>
+            <div class="formula">Surface Area: \(S = \int_{a}^{b} 2\pi f(x) \sqrt{1 + [f'(x)]^2} dx\)</div>
+            
+            <div class="section-title">Work, Mass, Force:</div>
+            <div class="formula">Work (variable force): \(W = \int_{a}^{b} F(x) dx\)</div>
+            <div class="formula">Hooke's Law: \(F(x) = kx\)</div>
+            <div class="formula">Mass (linear): \(m = \int_{a}^{b} \rho(x) dx\)</div>
+            <div class="formula">Mass (radial): \(m = \int_{0}^{r} 2\pi x \rho(x) dx\)</div>
+            <div class="formula">Hydrostatic Force: \(F = \int_{a}^{b} \rho g w(x) s(x) dx\)</div>
+        </div>
 
+        <div class="column">
+            <h4>Ch 3: Integration Techniques</h4>
+            
+            <div class="section-title">Integration by Parts:</div>
+            <div class="formula">\(\int u dv = uv - \int v du\)</div>
+            <div class="formula">\(\int_{a}^{b} u dv = [uv]_{a}^{b} - \int_{a}^{b} v du\)</div>
+            <div class="note">(LIATE: Log, Inverse trig, Algebraic, Trig, Exponential)</div>
+            
+            <div class="section-title">Trigonometric Substitution:</div>
+            <table>
+                <tr><td>\(\sqrt{a^2-x^2}\)</td><td>\(x=a\sin\theta\)</td></tr>
+                <tr><td>\(\sqrt{a^2+x^2}\)</td><td>\(x=a\tan\theta\)</td></tr>
+                <tr><td>\(\sqrt{x^2-a^2}\)</td><td>\(x=a\sec\theta\)</td></tr>
+            </table>
+            
+            <div class="section-title">Partial Fractions \(\frac{P(x)}{Q(x)}\):</div>
+            <div class="formula">\(\frac{A}{ax+b}\), \(\frac{A_1}{ax+b} + \frac{A_2}{(ax+b)^2} + \dots\)</div>
+            <div class="formula">\(\frac{Ax+B}{ax^2+bx+c}\), \(\frac{A_1x+B_1}{ax^2+..} + \frac{A_2x+B_2}{(ax^2+..)^2}\)</div>
+            
+            <div class="section-title">Numerical Integration:</div>
+            <div class="note">(\(\Delta x = \frac{b-a}{n}\))</div>
+            <div class="formula">\(M_n = \Delta x \sum f(m_i)\)</div>
+            <div class="formula">\(T_n = \frac{\Delta x}{2}[f(x_0) + 2f(x_1) + \dots + f(x_n)]\)</div>
+            <div class="formula">\(S_n = \frac{\Delta x}{3}[f(x_0)+4f(x_1)+2f(x_2)+\dots+f(x_n)]\)</div>
+            <div class="formula">Error \(M_n \leq \frac{M(b-a)^3}{24n^2}\), Error \(T_n \leq \frac{M(b-a)^3}{12n^2}\)</div>
+            <div class="formula">Error \(S_n \leq \frac{M(b-a)^5}{180n^4}\)</div>
+            
+            <div class="section-title">Improper Integrals:</div>
+            <div class="formula">\(\int_a^\infty f(x)dx = \lim_{t\to\infty} \int_a^t f(x)dx\)</div>
+            <div class="formula">\(\int_a^b f(x)dx = \lim_{t\to b^-} \int_a^t f(x)dx\) (disc. at b)</div>
+        </div>
+
+        <div class="column">
+            <h4>Ch 4: Differential Equations</h4>
+            
+            <div class="section-title">Separable Equations:</div>
+            <div class="formula">\(y' = f(x)g(y) \implies \int \frac{1}{g(y)} dy = \int f(x) dx\)</div>
+            
+            <div class="section-title">Newton's Law of Cooling:</div>
+            <div class="formula">\(\frac{dT}{dt} = k(T - T_s)\)</div>
+            
+            <div class="divider"></div>
+            
+            <h4>Trigonometric Identities</h4>
+            
+            <div class="section-title">Pythagorean:</div>
+            <div class="formula">\(\sin^2\theta + \cos^2\theta = 1\)</div>
+            <div class="formula">\(\tan^2\theta + 1 = \sec^2\theta\)</div>
+            <div class="formula">\(1 + \cot^2\theta = \csc^2\theta\)</div>
+            
+            <div class="section-title">Power-Reducing:</div>
+            <div class="formula">\(\sin^2\theta = \frac{1 - \cos(2\theta)}{2}\)</div>
+            <div class="formula">\(\cos^2\theta = \frac{1 + \cos(2\theta)}{2}\)</div>
+            <div class="formula">\(\tan^2\theta = \frac{1 - \cos(2\theta)}{1 + \cos(2\theta)}\)</div>
+            
+            <div class="section-title">Product-to-Sum:</div>
+            <div class="formula">\(\sin(A)\cos(B) = \frac{1}{2}[\sin(A-B) + \sin(A+B)]\)</div>
+            <div class="formula">\(\cos(A)\cos(B) = \frac{1}{2}[\cos(A-B) + \cos(A+B)]\)</div>
+            <div class="formula">\(\sin(A)\sin(B) = \frac{1}{2}[\cos(A-B) - \cos(A+B)]\)</div>
+            
+            <div class="section-title">Double Angle:</div>
+            <div class="formula">\(\sin(2\theta) = 2\sin\theta\cos\theta\)</div>
+            <div class="formula">\(\cos(2\theta) = \cos^2\theta - \sin^2\theta\)</div>
+        </div>
+    </div>
+</body>
+</html>
